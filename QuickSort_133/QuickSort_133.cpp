@@ -43,37 +43,37 @@ void swap(int x, int y)
 void q_short(int low, int high)
 {
 	int pivot, i, j;
-	if (low > high)
+	if (low > high)										//Langkah Algoritma No 1
 		return;
 
 	//Partition the list into two parts;
 	//one containing elements less that or equal to pivot
 	//Outer containing elements greather than pivot
 
-	pivot = arr[low];
+	pivot = arr[low];									//langkah Algoritma No 2
 
-	i = low + 1;
-	j = high;
+	i = low + 1;										//Langkah Algoritma No 3
+	j = high;											//Langkah Algoritma No 4
 
 
 
-	while (i <= j)
+	while (i <= j)										//Langkah Algoritma No 10
 	{
 
-		while ((arr[i] <= pivot) && (i <= high))
+		while ((arr[i] <= pivot) && (i <= high))		//Langkah Algoritma No 5
 		{
-			i++;
+			i++;										//Langkah Algoritma No 6
 			cmp_count++;
 		}
 		cmp_count++;
 
-		while ((arr[j] > pivot) && (j >= low))
+		while ((arr[j] > pivot) && (j >= low))			//Langkah Algoritma No 7
 		{
-			j--;
+			j--;										//Langkah Algoritma No 8
 			cmp_count++;
 		}
 		cmp_count++;
-		if (i < j)
+		if (i < j)										//Langkah Algoritma No 9
 		{
 
 			swap(i, j);
@@ -81,17 +81,17 @@ void q_short(int low, int high)
 		}
 	}
 
-	if (low < j)
+	if (low < j)										//Langkah Algoritma No 11
 	{
 
 		swap(low, j);
 		mov_count++;
 	}
 
-	q_short(low, j - 1);
+	q_short(low, j - 1);								//Langkah Algoritma No 12
 
 
-	q_short(j + 1, high);
+	q_short(j + 1, high);								//Langkah Algoritma No 13
 
 
 
